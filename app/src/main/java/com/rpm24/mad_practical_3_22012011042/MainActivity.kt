@@ -34,7 +34,7 @@ class MainActivity : AppCompatActivity() {
         val phoneinput = findViewById<EditText>(R.id.phoneinput)
         phonebtn.setOnClickListener {
             val phoneNumber = phoneinput.text.toString()
-            val phoneIntent = Intent(Intent.ACTION_CALL).apply {
+            val phoneIntent = Intent(Intent.ACTION_DIAL).apply {
                 data = Uri.parse("tel:$phoneNumber")
             }
             startActivity(phoneIntent)
@@ -65,11 +65,18 @@ class MainActivity : AppCompatActivity() {
             val alIntent = Intent(android.provider.AlarmClock.ACTION_SHOW_ALARMS)
             startActivity(alIntent)
         }
-
-        val logbtn = findViewById<Button>(R.id.lgbtn)
-        logbtn.setOnClickListener{
-            val logIntent = Intent(this,LoginActivity::class.java)
-            startActivity(logIntent)
+        val login_button=findViewById<Button>(R.id.lgbtn)
+        login_button.setOnClickListener{
+            Intent(this, LoginActivity::class.java)
+                .putExtra("email", "ramipm0724@gmail.com")
+                .putExtra("password", "12345678")
+                .also{
+                    startActivity(it)
+                }
+            /*val intent = Intent(this, LoginActivity::class.java)
+            intent.putExtra("email", "efefwefwefefew")
+            intent.putExtra("password", "ygygyg")
+            startActivity(intent)*/
         }
     }
 }
