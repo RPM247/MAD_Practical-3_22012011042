@@ -3,6 +3,8 @@ package com.rpm24.mad_practical_3_22012011042
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
+import android.provider.AlarmClock
+import android.provider.MediaStore
 import android.provider.Telephony.Mms.Intents
 import android.widget.Button
 import android.widget.EditText
@@ -49,20 +51,21 @@ class MainActivity : AppCompatActivity() {
 
         val glbtn = findViewById<Button>(R.id.glbtn)
         glbtn.setOnClickListener{
-            val glIntent = Intent(Intent.ACTION_VIEW)
-            glIntent.setData(android.net.Uri.parse("content://media/internal/images/media"))
-            startActivity(glIntent)
+            intent = Intent(Intent.ACTION_VIEW).apply {
+                type = "image/*"
+            }
+            startActivity(intent)
         }
 
         val cmbtn = findViewById<Button>(R.id.cmbtn)
         cmbtn.setOnClickListener{
-            val cmIntent = Intent(android.provider.MediaStore.ACTION_IMAGE_CAPTURE)
+            val cmIntent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
             startActivity(cmIntent)
         }
 
         val albtn = findViewById<Button>(R.id.albtn)
         albtn.setOnClickListener{
-            val alIntent = Intent(android.provider.AlarmClock.ACTION_SHOW_ALARMS)
+            val alIntent = Intent(AlarmClock.ACTION_SHOW_ALARMS)
             startActivity(alIntent)
         }
         val login_button=findViewById<Button>(R.id.lgbtn)
