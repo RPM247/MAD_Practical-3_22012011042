@@ -31,13 +31,16 @@ class LoginActivity : AppCompatActivity() {
         loginbtn.setOnClickListener {
             val emailinput = emailip.text.toString()
             val passwordinput = passwordip.text.toString()
-            if (emailinput.isBlank()) {
-                Toast.makeText(this, "Enter your email", Toast.LENGTH_SHORT).show()
-            } else if (passwordinput.isBlank()) {
-                Toast.makeText(this, "Enter your password", Toast.LENGTH_SHORT).show()
+            if (!emailinput.isBlank() && !passwordinput.isBlank()) {
+                Toast.makeText(this, "email: $email", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "password: $password", Toast.LENGTH_SHORT).show()
+            } else {
+                if (emailinput.isBlank()) {
+                    Toast.makeText(this, "Enter your email", Toast.LENGTH_SHORT).show()
+                } else if (passwordinput.isBlank()) {
+                    Toast.makeText(this, "Enter your password", Toast.LENGTH_SHORT).show()
+                }
             }
-            Toast.makeText(this, "email: $email", Toast.LENGTH_SHORT).show()
-            Toast.makeText(this, "password: $password", Toast.LENGTH_SHORT).show()
         }
     }
 }
