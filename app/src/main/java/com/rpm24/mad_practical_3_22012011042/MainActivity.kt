@@ -51,7 +51,7 @@ class MainActivity : AppCompatActivity() {
 
         val glbtn = findViewById<Button>(R.id.glbtn)
         glbtn.setOnClickListener{
-            intent = Intent(Intent.ACTION_VIEW).apply {
+            val intent = Intent(Intent.ACTION_VIEW).apply {
                 type = "image/*"
             }
             startActivity(intent)

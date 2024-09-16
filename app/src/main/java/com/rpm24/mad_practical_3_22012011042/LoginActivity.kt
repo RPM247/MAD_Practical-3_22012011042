@@ -23,8 +23,8 @@ class LoginActivity : AppCompatActivity() {
         }
         val email = intent.getStringExtra("email").toString()
         val password = intent.getStringExtra("password").toString()
-        Log.i("email", email)
-        Log.i("password", password)
+        /*Log.i("email", email)
+        Log.i("password", password)*/
         val emailip = findViewById<EditText>(R.id.email_input)
         val passwordip = findViewById<EditText>(R.id.password_input)
         val loginbtn = findViewById<Button>(R.id.login_btn)
