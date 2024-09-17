@@ -16,7 +16,7 @@
 
     <com.google.android.material.card.MaterialCardView
         android:layout_width="match_parent"
-        android:layout_height="250dp"
+        android:layout_height="wrap_content"
         android:layout_marginHorizontal="20dp"
         app:cardElevation="20dp"
         app:cardCornerRadius="30dp"
@@ -30,6 +30,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Email :"
+                android:layout_marginStart="10dp"
                 android:textSize="17sp"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintStart_toStartOf="parent"/>
@@ -50,6 +51,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Password :"
+                android:layout_marginStart="10dp"
                 android:textSize="17sp"
                 app:layout_constraintTop_toBottomOf="@id/email_text"
                 app:layout_constraintStart_toStartOf="parent"
@@ -66,15 +68,26 @@
                 app:layout_constraintStart_toEndOf="@id/password_text"
                 app:layout_constraintEnd_toEndOf="parent"
                 android:inputType="textPassword"/>
+            <TextView
+                android:id="@+id/forgot_password"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="20dp"
+                android:text="Forgot Password?"
+                android:textSize="17sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/password_text"/>
+
             <Button
                 android:id="@+id/login_btn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
                 android:text="LOGIN"
-                app:layout_constraintStart_toStartOf="@id/email_text"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/password_input"
-                android:layout_marginTop="20dp"/>
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/forgot_password" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>
